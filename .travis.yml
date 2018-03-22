@@ -12,6 +12,8 @@
          - libc6
          - libqrencode-dev
          - qrencode
+         - Automake
+         - Autoconf
 
   before_install: 
 
