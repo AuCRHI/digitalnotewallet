@@ -11,9 +11,7 @@
          - cmake
          - libc6
          - libqrencode-dev
-         - qt5
          - qrencode
-         - qttools5-dev-tools
 
   before_install: 
 
