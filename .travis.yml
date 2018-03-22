@@ -14,6 +14,7 @@
          - qrencode
          - Automake
          - Autoconf
+         - make
 
   before_install: 
 
