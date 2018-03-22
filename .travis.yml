@@ -10,10 +10,11 @@
          - clang
          - cmake
          - libc6
-         -libqrencode-dev
-         -qt5
-         -qrencode
-         -qttools5-dev-tools
+         - libqrencode-dev
+         - qt5
+         - qrencode
+         - qttools5-dev-tools
+
   before_install: 
             - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew upgrade autoconf automake berkeley-db4 libtool miniupnpc openssl protobuf; fi
             - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo add-apt-repository -y ppa:boost-latest/ppa; fi
