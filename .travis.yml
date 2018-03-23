@@ -2,7 +2,7 @@ I  language: cpp
 
   group: stable
 
-  dist: precise
+dist: trusty
 
   addons:
     apt:
@@ -16,6 +16,9 @@ I  language: cpp
 
   before_install: 
 
+- sudo add-apt-repository --yes ppa:beineri/opt-qt551-trusty
+  - sudo apt-get update -qq
+
             - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew upgrade autoconf automake berkeley-db4 libtool miniupnpc openssl protobuf; fi
             - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo add-apt-repository -y ppa:boost-latest/ppa; fi
             - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-mark hold riak postgresql-9.2 postgresql-contrib-9.2 postgresql-9.3 postgresql-contrib-9.3 postgresql-9.4 postgresql-contrib-9.4 postgresql-9.5 postgresql-contrib-9.5; fi
@@ -28,6 +31,7 @@ Install:
 - sudo apt-get update
 - sudo apt-get install build-essential
 - sudo apt-get install libqt5-dev 
+- sudo apt-get -y install qt55[QTPACKAGE]
 
   script:
             cmake cmakelists.txt
