@@ -1,4 +1,4 @@
-  language: cpp
+I  language: cpp
 
   group: stable
 
@@ -30,7 +30,7 @@
 
   script:
             cmake cmakelists.txt
-            make -j4
+            make
   os: 
      - osx
      #- linux
