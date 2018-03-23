@@ -1,8 +1,11 @@
   language: cpp
 
-  group: stable
+group: stable
 
-  dist: trusty
+sudo: required
+
+dist: trusty
+
   addons:
     apt:
       packages:
