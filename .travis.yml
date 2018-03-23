@@ -13,6 +13,7 @@ dist: trusty
          - libc6
          - libqrencode-dev
          - qrencode
+         - build-essential
 
   before_install: 
 
