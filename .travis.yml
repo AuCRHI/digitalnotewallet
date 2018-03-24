@@ -13,6 +13,14 @@ dist: trusty
          - clang
          - cmake
          - libc6
+- libqrencode-dev
+- libqrencode3
+- qt5-default
+- qt5-qmake
+- qtbase5-dbg
+- qtbase5-dev
+- qtbase5-dev-tools
+
   before_install: 
  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get clean; fi
             - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew upgrade autoconf automake berkeley-db4 libtool miniupnpc openssl protobuf; fi
