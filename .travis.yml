@@ -10,7 +10,10 @@
          - clang
          - cmake
          - libc6
+
   before_install: 
+- sudo apt-get update -qq
+
             - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew upgrade autoconf automake berkeley-db4 libtool miniupnpc openssl protobuf; fi
             - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo add-apt-repository -y ppa:boost-latest/ppa; fi
             - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-mark hold riak postgresql-9.2 postgresql-contrib-9.2 postgresql-9.3 postgresql-contrib-9.3 postgresql-9.4 postgresql-contrib-9.4 postgresql-9.5 postgresql-contrib-9.5; fi
