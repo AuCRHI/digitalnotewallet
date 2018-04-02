@@ -50,7 +50,7 @@
          </font>
         </property>
         <property name="text">
-         <string>Deposits</string>
+         <string>Stakes</string>
         </property>
        </widget>
       </item>
@@ -224,7 +224,7 @@
       <item row="0" column="2">
        <widget class="QLabel" name="m_interestLabel">
         <property name="text">
-         <string/>
+          <string>Reward:</string>
         </property>
        </widget>
       </item>
@@ -244,14 +244,14 @@
       <item row="2" column="2" alignment="Qt::AlignLeft">
        <widget class="QPushButton" name="m_depositButton">
         <property name="text">
-         <string>Deposit</string>
+         <string>Stake</string>
         </property>
        </widget>
       </item>
       <item row="2" column="0">
        <widget class="QLabel" name="m_feeTextLabel">
         <property name="text">
-         <string>Deposit fee:</string>
+         <string>Stake fee:</string>
         </property>
        </widget>
       </item>

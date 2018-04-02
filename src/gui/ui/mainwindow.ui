@@ -432,7 +432,7 @@
      <normaloff>:/icons/deposits</normaloff>:/icons/deposits</iconset>
    </property>
    <property name="text">
-    <string>Deposits</string>
+    <string>Staking</string>
    </property>
   </action>
   <action name="m_resetAction">
