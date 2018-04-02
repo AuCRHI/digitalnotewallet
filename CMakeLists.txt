@@ -5,6 +5,14 @@ include(QREncode.cmake)
 
 project(${CN_PROJECT_NAME})
 
+if (POLICY CMP0071)
+cmake_policy(SET CMP0071 NEW)
+endif()
+
+if (POLICY CMP0043)
+cmake_policy(SET CMP0043 NEW)
+endif()
+
 execute_process(COMMAND git log -1 --pretty=format:%h
 WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
 OUTPUT_VARIABLE GIT_REVISION)
@@ -21,6 +29,9 @@ include_directories(${CMAKE_BINARY_DIR}
 find_package(Qt5Gui REQUIRED)
 find_package(Qt5Widgets REQUIRED)
 find_package(Qt5Network REQUIRED)
+find_package(Qt5DBus REQUIRED)
+
+include_directories(${Qt5DBus_INCLUDE_DIRS} include src external "${CMAKE_CURRENT_BINARY_DIR}/version")
 
 set(Boost_USE_STATIC_LIBS ON)
 if(WIN32)
@@ -157,7 +168,6 @@ set(CRYPTONOTE_SOURCES
   cryptonote/src/Rpc/JsonRpc.cpp
   cryptonote/src/P2p/NetNode.cpp
   cryptonote/src/P2p/LevinProtocol.cpp
-  cryptonote/src/P2p/NetNodeConfig.cpp
   cryptonote/src/P2p/PeerListManager.cpp
   cryptonote/src/CryptoNoteProtocol/CryptoNoteProtocolHandler.cpp
   cryptonote/src/Logging/ILogger.cpp
@@ -235,7 +245,7 @@ endif ()
 
 include_directories(cryptonote/src/Platform/${PLATFORM_DIR})
 file(GLOB PLATFORM_SOURCES cryptonote/src/Platform/${PLATFORM_DIR}/System/*)
-set(CRYPTONOTE_SOURCES ${CRYPTONOTE_SOURCES} ${PLATFORM_SOURCES})
+set(CRYPTONOTE_SOURCES ${CRYPTONOTE_SOURCES} ${PLATFORM_SOURCES} ${CRYPTONOTE_PLATFORM})
 
 add_library(${CRYPTONOTE_LIB} STATIC ${CRYPTONOTE_SOURCES})
 set_target_properties(${CRYPTONOTE_LIB} PROPERTIES COMPILE_DEFINITIONS _GNU_SOURCE)
